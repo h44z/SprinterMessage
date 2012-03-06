@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="org.thoughtcrime.securesms"
+      android:versionCode="24"
+      android:versionName="0.6.4">
+      
+       <supports-screens
+           android:largeScreens="true"
+           android:normalScreens="true"
+           android:smallScreens="true"
+           android:anyDensity="true" />
+
+       <application
+        android:debuggable="false"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".SecureSMS"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="@string/app_name"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AutoInitiateActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="SprinterMessaging Detected"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".ApplicationPreferencesActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout" >
+        </activity>
+        <activity
+            android:name=".ComposeMessageActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout" >
+        </activity>
+        <activity
+            android:name=".PassphraseCreateActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Create Passphrase"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".PassphrasePromptActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Enter Passphrase"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".PassphraseChangeActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Change Passphrase"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".SendKeyActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Initiate Key Exchange"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".ReceiveKeyActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Complete Key Exchange"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".VerifyKeysActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Verify Session"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".VerifyIdentityActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Verify Identity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".VerifyImportedIdentityActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Verify Imported Identity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".ViewIdentityActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Public Identity Key"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".SaveIdentityActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Save Identity"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".ReviewIdentitiesActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Manage Identity Keys (Long click)"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <activity
+            android:name=".ContactSelectionActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Contact Selection" >
+        </activity>
+        <activity
+            android:name=".ContactSelectionListActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Contact Selection" >
+        </activity>
+        <activity
+            android:name=".GroupSelectionListActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Group Selection" >
+        </activity>
+        <activity
+            android:name=".ContactSelectionRecentActivity"
+            android:configChanges="touchscreen|keyboard|keyboardHidden|orientation|screenLayout"
+            android:label="Recent Calls Selection" >
+        </activity>
+
+        <service
+            android:name=".service.KeyCachingService"
+            android:enabled="true" >
+        </service>
+        <service
+            android:name=".service.SendReceiveService"
+            android:enabled="true" >
+        </service>
+
+        <!-- <receiver android:name=".service.BootListener" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="false"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <receiver
+            android:name=".service.SmsListener"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:priority="1001" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" >
+                </action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.thoughtcrime.securesms.services.MESSAGE_SENT" >
+                </action>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".service.MmsListener"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.BROADCAST_WAP_PUSH" >
+            <intent-filter android:priority="1001" >
+                <action android:name="android.provider.Telephony.WAP_PUSH_RECEIVED" >
+                </action>
+
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".providers.PartProvider"
+            android:authorities="org.thoughtcrime.provider.securesms" />
+
+        <uses-library android:name="android.test.runner" />
+    </application>
+<uses-sdk android:minSdkVersion="4" />
+
+<permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"
+	        android:label="Access to TextSecure Secrets"
+	        android:protectionLevel="signature" />    
+
+<uses-permission android:name="org.thoughtcrime.securesms.ACCESS_SECRETS"></uses-permission>
+<uses-permission android:name="android.permission.BROADCAST_WAP_PUSH"></uses-permission>
+<uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+<uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.RECEIVE_SMS"></uses-permission>
+<uses-permission android:name="android.permission.RECEIVE_MMS"></uses-permission>
+<uses-permission android:name="android.permission.READ_SMS"></uses-permission>
+<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+<uses-permission android:name="android.permission.WRITE_SMS"></uses-permission>
+<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+
+<instrumentation android:name="android.test.InstrumentationTestRunner"
+       android:targetPackage="org.thoughtcrime.securesms.tests" android:label="Tests for My App" />
+
+</manifest> 

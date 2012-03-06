@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ * Copyright (C) 2012 Christoph Haas
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string-array name="minutes_hours">
+        <item>minutes</item>
+        <item>hours</item>
+    </string-array>
+    <string-array name="pref_led_color_entries">
+        <item>Grün</item>
+        <item>Rot</item>
+        <item>Blau</item>
+        <item>Orange</item>
+        <item>Zyan</item>
+        <item>Magenta</item>
+    </string-array>
+    <string-array name="pref_led_color_values" translatable="false">
+        <item>green</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>yellow</item>
+        <item>cyan</item>
+        <item>magenta</item>
+    </string-array>
+    <string-array name="pref_led_blink_pattern_entries">
+        <item>Schnell</item>
+        <item>Normal</item>
+        <item>Langsam</item>
+        <item>Benutzerdefiniert</item>
+    </string-array>
+    <string-array name="pref_led_blink_pattern_values" translatable="false">
+        <item>300,300</item>
+        <item>500,2000</item>
+        <item>3000,3000</item>
+        <item>custom</item>
+    </string-array>
+    <string-array name="pref_smileys_entries">
+        <item>Standard</item>
+        <item>Neue Smilies</item>
+        <item>Alte Smilies</item>
+    </string-array>
+    <string-array name="pref_smileys_values" translatable="false">
+        <item>custom</item>
+        <item>ics</item>
+        <item>old</item>
+    </string-array>
+
+    <!--
+       NOTE: if you change anything about this array, you must make the corresponding change
+         to the array DEFAULT_SMILEY_RES_IDS in MessageListItem.java and to default_smiley_names
+         below.
+    -->
+    <string-array name="default_smiley_texts">
+        <item>:-)</item> <!-- 0: Happy -->
+        <item>:)</item> <!-- 1: Happy -->
+        <item>:-(</item> <!-- 2: Sad -->
+        <item>:(</item> <!-- 3: Sad -->
+        <item>;-)</item> <!-- 4: Winking -->
+        <item>;)</item> <!-- 5: Winking -->
+        <item>:-P</item> <!-- 6: Tongue sticking out -->
+        <item>:P</item> <!-- 7: Tongue sticking out -->
+        <item>=-O</item> <!-- 8: Surprised -->
+        <item>:-O</item> <!-- 9: Surprised -->
+        <item>:-*</item> <!-- 10: Kissing -->
+        <item>:O</item> <!-- 11: Yelling -->
+        <item>B-)</item> <!-- 12: Cool -->
+        <item>:-$</item> <!-- 13: Money mouth -->
+        <item>:-!</item> <!-- 14: Foot in mouth -->
+        <item>:-[</item> <!-- 15: Embarrassed -->
+        <item>O:-)</item> <!-- 16: Angel -->
+        <item>:-\\</item> <!-- 17: Undecided -->
+        <item>:\'(</item> <!-- 18: Crying -->
+        <item>:-X</item> <!-- 19: Lips are sealed -->
+        <item>:-D</item> <!-- 20: Laughing -->
+        <item>:D</item> <!-- 21: Laughing -->
+        <item>o_O</item> <!-- 22: Confused -->
+        <item>&lt;3</item> <!-- 23: Heart -->
+        <item>x-(</item> <!-- 24: Mad -->
+        <item>:-/</item> <!-- 25: Smirk -->
+        <item>:-I</item> <!-- 26: Poker face -->
+    </string-array>
+
+    <!--
+         NOTE: if you change anything about this array, you must make the corresponding change
+         to the array DEFAULT_SMILEY_RES_IDS in SmileyParser.java and to default_smiley_texts
+         above.
+    -->
+    <string-array name="default_smiley_names">
+        <item>Glücklich</item> <!-- 0: :-) -->
+        <item>Glücklich</item> <!-- 1: :) -->
+        <item>Traurig</item> <!-- 2: :-( -->
+        <item>Traurig</item> <!-- 3: :( -->
+        <item>Zwinkern</item> <!-- 4: ;-) -->
+        <item>Zwinkern</item> <!-- 5: ;) -->
+        <item>Frech</item> <!-- 6: :-P -->
+        <item>Frech</item> <!-- 7: :P -->
+        <item>Überrascht</item> <!-- 8: =-O -->
+        <item>Überrascht</item> <!-- 9: =O -->
+        <item>Kuss</item> <!-- 10: :-* -->
+        <item>Schreien</item> <!-- 11: :O -->
+        <item>Cool</item> <!-- 12: B-) -->
+        <item>Dollarzeichen</item> <!-- 13: :-$ -->
+        <item>Fettnäpfchen</item> <!-- 14: :-! -->
+        <item>Peinlich berührt</item> <!-- 15: :-[ -->
+        <item>Engel</item> <!-- 16: O:-) -->
+        <item>Unentschlossen</item> <!-- 17: :-\\ -->
+        <item>Weinen</item> <!-- 18: :\'( -->
+        <item>Versiegelte Lippen</item> <!-- 19: :-X -->
+        <item>Fröhlich</item> <!-- 20: :-D -->
+        <item>Fröhlich</item> <!-- 21: :D -->
+        <item>Verwirrt</item> <!-- 22: o_O -->
+        <item>Verliebt</item> <!-- 23: <3 -->
+        <item>Verärgert</item> <!-- 24: x-( -->
+        <item>Grinsen</item> <!-- 25: :-/ -->
+        <item>Pokergesicht</item> <!-- 26: :-I -->
+    </string-array>
+
+</resources>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="minutes_hours">
+        <item>minutes</item>
+        <item>hours</item>
+    </string-array>
+    <string-array name="pref_led_color_entries">
+        <item>Green</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Orange</item>
+        <item>Cyan</item>
+        <item>Magenta</item>
+    </string-array>
+    <string-array name="pref_led_color_values" translatable="false">
+        <item>green</item>
+        <item>red</item>
+        <item>blue</item>
+        <item>yellow</item>
+        <item>cyan</item>
+        <item>magenta</item>
+    </string-array>
+    <string-array name="pref_led_blink_pattern_entries">
+        <item>Fast</item>
+        <item>Normal</item>
+        <item>Slow</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="pref_led_blink_pattern_values" translatable="false">
+        <item>300,300</item>
+        <item>500,2000</item>
+        <item>3000,3000</item>
+        <item>custom</item>
+    </string-array>
+    <!--
+       NOTE: if you change anything about this array, you must make the corresponding change
+         to the array DEFAULT_SMILEY_RES_IDS in MessageListItem.java and to default_smiley_names
+         below.
+    -->
+    <string-array name="default_smiley_texts">
+        <item>:-)</item> <!-- 0: Happy -->
+        <item>:)</item> <!-- 1: Happy -->
+        <item>:-(</item> <!-- 2: Sad -->
+        <item>:(</item> <!-- 3: Sad -->
+        <item>;-)</item> <!-- 4: Winking -->
+        <item>;)</item> <!-- 5: Winking -->
+        <item>:-P</item> <!-- 6: Tongue sticking out -->
+        <item>:P</item> <!-- 7: Tongue sticking out -->
+        <item>=-O</item> <!-- 8: Surprised -->
+        <item>:-O</item> <!-- 9: Surprised -->
+        <item>:-*</item> <!-- 10: Kissing -->
+        <item>:O</item> <!-- 11: Yelling -->
+        <item>B-)</item> <!-- 12: Cool -->
+        <item>:-$</item> <!-- 13: Money mouth -->
+        <item>:-!</item> <!-- 14: Foot in mouth -->
+        <item>:-[</item> <!-- 15: Embarrassed -->
+        <item>O:-)</item> <!-- 16: Angel -->
+        <item>:-\\</item> <!-- 17: Undecided -->
+        <item>:\'(</item> <!-- 18: Crying -->
+        <item>:-X</item> <!-- 19: Lips are sealed -->
+        <item>:-D</item> <!-- 20: Laughing -->
+        <item>:D</item> <!-- 21: Laughing -->
+        <item>o_O</item> <!-- 22: Confused -->
+        <item>&lt;3</item> <!-- 23: Heart -->
+        <item>x-(</item> <!-- 24: Mad -->
+        <item>:-/</item> <!-- 25: Smirk -->
+        <item>:-I</item> <!-- 26: Poker face -->
+    </string-array>
+
+    <!--
+         NOTE: if you change anything about this array, you must make the corresponding change
+         to the array DEFAULT_SMILEY_RES_IDS in SmileyParser.java and to default_smiley_texts
+         above.
+    -->
+    <string-array name="default_smiley_names">
+        <item>Happy</item> <!-- 0: :-) -->
+        <item>Happy</item> <!-- 1: :-) -->
+        <item>Sad</item> <!-- 2: :-( -->
+        <item>Sad</item> <!-- 3: :-( -->
+        <item>Winking</item> <!-- 4: ;-) -->
+        <item>Winking</item> <!-- 5: ;-) -->
+        <item>Tongue sticking out</item> <!-- 6: :-P -->
+        <item>Tongue sticking out</item> <!-- 7: :-P -->
+        <item>Surprised</item> <!-- 8: =-O -->
+        <item>Surprised</item> <!-- 9: =-O -->
+        <item>Kissing</item> <!-- 10: :-* -->
+        <item>Yelling</item> <!-- 11: :O -->
+        <item>Cool</item> <!-- 12: B-) -->
+        <item>Money mouth</item> <!-- 13: :-$ -->
+        <item>Foot in mouth</item> <!-- 14: :-! -->
+        <item>Embarrassed</item> <!-- 15: :-[ -->
+        <item>Angel</item> <!-- 16: O:-) -->
+        <item>Undecided</item> <!-- 17: :-\\ -->
+        <item>Crying</item> <!-- 18: :\'( -->
+        <item>Lips are sealed</item> <!-- 19: :-X -->
+        <item>Laughing</item> <!-- 20: :-D -->
+        <item>Laughing</item> <!-- 21: :D -->
+        <item>Confused</item> <!-- 22: o_O -->
+        <item>Heart</item> <!-- 23: <3 -->
+        <item>Mad</item> <!-- 24: x-( -->
+        <item>Smirk</item> <!-- 25: :-/ -->
+        <item>Poker face</item> <!-- 26: :-I -->
+    </string-array>
+
+</resources>

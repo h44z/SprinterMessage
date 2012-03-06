@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2007-2008 Esmertec AG.
+ * Copyright (C) 2007-2008 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Use Settings" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_all_sms"
+            android:summary="Use SprinterMessage for viewing and storing all incoming text messages"
+            android:title="Use for all SMS" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="pref_all_mms"
+            android:summary="Use SprinterMessage for viewing and storing all incoming multimedia messages"
+            android:title="Use for all MMS" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Input Settings" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="pref_enter_sends"
+            android:summary="Pressing the enter key will send text messages"
+            android:title="Enter Sends" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Other Settings" >
+        <PreferenceScreen
+            android:key="display_preference"
+            android:summary="Setup SprinterMessage Visuals"
+            android:title="Display Settings" >
+            <PreferenceCategory android:title="Display Settings" >
+                <Preference
+                    android:key="pref_choose_identity"
+                    android:summary="Choose your contact entry from the contacts list."
+                    android:title="Choose Identity" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_dark_threads"
+                    android:summary="Display dark background in thread list"
+                    android:title="Dark Thread List Theme" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="pref_dark_conversation"
+                    android:summary="Display dark background in conversation view"
+                    android:title="Dark Conversation Theme" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_conversation_list_icons"
+                    android:summary="Show contact photo icons in list of conversation threads"
+                    android:title="List Photos" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_conversation_icons"
+                    android:summary="Show contact photo icons in conversation"
+                    android:title="Conversation Photos" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_parse_smileys"
+                    android:summary="Parse smileys to images"
+                    android:title="Smileyparser" />
+
+                <ListPreference
+                    android:defaultValue="custom"
+                    android:dependency="pref_parse_smileys"
+                    android:dialogTitle="Choose Smiley Package"
+                    android:entries="@array/pref_smileys_entries"
+                    android:entryValues="@array/pref_smileys_values"
+                    android:key="pref_smiley_package"
+                    android:summary="Change Smiley Package"
+                    android:title="Smiley Package" />
+
+                <EditTextPreference
+                    android:defaultValue="1.6"
+                    android:dependency="pref_parse_smileys"
+                    android:key="pref_smiley_scale"
+                    android:summary="Scalefactor (1.0 = 100%)"
+                    android:title="Smiley Scale (DEV only)" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="encryption_preference"
+            android:summary="Setup SprinterMessage Encryption"
+            android:title="Encryption Settings" >
+            <PreferenceCategory android:title="Encryption Settings" >
+                <Preference
+                    android:key="pref_change_passphrase"
+                    android:summary="Change my passphrase"
+                    android:title="Change Passphrase" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_auto_complete_key_exchange"
+                    android:summary="Automatically complete key exchanges for new sessions or for existing sessions with the same identity key"
+                    android:title="Complete Key Exchanges" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_key_tag_whitespace"
+                    android:summary="Include a whitespace tag at the end of every non-encrypted message"
+                    android:title="Include whitespace tag" />
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_send_identity_key"
+                    android:summary="Sign key exchange messages with identity key"
+                    android:title="Sign Key Exchange" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:key="pref_timeout_passphrase"
+                    android:summary="Forget passphrase from memory after some interval"
+                    android:title="Timeout passphrase" />
+
+                <org.thoughtcrime.securesms.preferences.PassphraseTimeoutPreference
+                    android:defaultValue="300"
+                    android:dependency="pref_timeout_passphrase"
+                    android:dialogTitle="Select Passphrase Timeout"
+                    android:key="pref_timeout_interval"
+                    android:summary="The amount of time to wait before forgetting passphrase from memory"
+                    android:title="Timeout interval" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="identity_preference"
+            android:summary="Setup your own Identity"
+            android:title="Identity Settings" >
+            <PreferenceCategory android:title="Identity Key Settings" >
+                <Preference
+                    android:key="pref_view_identity"
+                    android:summary="View my identity key"
+                    android:title="View/Set My Identity Key" />
+                <Preference
+                    android:key="pref_export_identity"
+                    android:summary="Export my identity key"
+                    android:title="Export My Identity Key" />
+                <Preference
+                    android:key="pref_import_identity"
+                    android:summary="Import an identity key from a contact"
+                    android:title="Import Contact&apos;s Key" />
+                <Preference
+                    android:key="pref_manage_identity"
+                    android:summary="Manage configured identity keys"
+                    android:title="Manage Identity Keys" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:key="notify_preference"
+            android:summary="Setup SprinterMessage Notifications"
+            android:title="Notification Settings" >
+            <PreferenceCategory android:title="Notification Settings" >
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:key="pref_key_enable_notifications"
+                    android:summary="Display message notifications in status bar"
+                    android:title="Notifications" />
+                <CheckBoxPreference
+                    android:defaultValue="false"
+                    android:dependency="pref_key_enable_notifications"
+                    android:key="pref_show_passinfo"
+                    android:layout="?android:attr/preferenceLayoutChild"
+                    android:summary="Show Password Notification"
+                    android:title="Show Password Notification" />
+
+                <ListPreference
+                    android:defaultValue="green"
+                    android:dependency="pref_key_enable_notifications"
+                    android:dialogTitle="Select LED Color"
+                    android:entries="@array/pref_led_color_entries"
+                    android:entryValues="@array/pref_led_color_values"
+                    android:key="pref_led_color"
+                    android:summary="Change notification LED color"
+                    android:title="LED Color" />
+
+                <org.thoughtcrime.securesms.preferences.LedBlinkPatternListPreference
+                    android:defaultValue="500,2000"
+                    android:dependency="pref_key_enable_notifications"
+                    android:dialogTitle="LED Blink Pattern"
+                    android:entries="@array/pref_led_blink_pattern_entries"
+                    android:entryValues="@array/pref_led_blink_pattern_values"
+                    android:key="pref_led_blink"
+                    android:summary="Change notification LED blink pattern"
+                    android:title="LED Blink Pattern" />
+
+                <RingtonePreference
+                    android:defaultValue="content://settings/system/notification_sound"
+                    android:dependency="pref_key_enable_notifications"
+                    android:key="pref_key_ringtone"
+                    android:layout="?android:attr/preferenceLayoutChild"
+                    android:ringtoneType="notification"
+                    android:title="Select ringtone" />
+
+                <CheckBoxPreference
+                    android:defaultValue="true"
+                    android:dependency="pref_key_enable_notifications"
+                    android:key="pref_key_vibrate"
+                    android:layout="?android:attr/preferenceLayoutChild"
+                    android:summary="Also vibrate when notified"
+                    android:title="Vibrate" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+</PreferenceScreen>
